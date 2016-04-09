@@ -1,6 +1,5 @@
-[![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/openfire/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/openfire)
 
-# sameersbn/openfire:3.10.3-7
+# gymnae/openfire:latest
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
@@ -102,7 +101,7 @@ To upgrade to newer releases:
   1. Download the updated Docker image:
 
   ```bash
-  docker pull sameersbn/openfire:3.10.3-7
+  docker pull gymnae/openfire:latest
   ```
 
   2. Stop the currently running image:
@@ -122,7 +121,7 @@ To upgrade to newer releases:
   ```bash
   docker run -name openfire -d \
     [OPTIONS] \
-    sameersbn/openfire:3.10.3-7
+    gymnae/openfire:latest
   ```
 
 ## Shell Access
