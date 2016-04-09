@@ -13,7 +13,7 @@ initialize_data_dir() {
 
   mkdir -p ${OPENFIRE_DATA_DIR}
   chmod -R 0750 ${OPENFIRE_DATA_DIR}
-  chown -R root:root ${OPENFIRE_DATA_DIR}
+  chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} ${OPENFIRE_DATA_DIR}
 
   # migrates data volume directory structure
   if [[ -d ${OPENFIRE_DATA_DIR}/openfire ]]; then
@@ -48,7 +48,7 @@ initialize_log_dir() {
   echo "Initializing ${OPENFIRE_LOG_DIR}..."
   mkdir -p ${OPENFIRE_LOG_DIR}
   chmod -R 0755 ${OPENFIRE_LOG_DIR}
-  chown -R root:root ${OPENFIRE_LOG_DIR}
+  chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} ${OPENFIRE_LOG_DIR}
 }
 
 # allow arguments to be passed to openfire launch
@@ -63,7 +63,7 @@ initialize_log_dir
 
 # default behaviour is to launch openfire
 if [[ -z ${1} ]]; then
-  exec start-stop-daemon --start --chuid root:root --exec /usr/bin/java -- \
+  exec start-stop-daemon --start --chuid ${OPENFIRE_USER}:${OPENFIRE_USER} --exec /usr/bin/java -- \
     -server \
     -DopenfireHome=/usr/share/openfire \
     -Dopenfire.lib.dir=/usr/share/openfire/lib \
