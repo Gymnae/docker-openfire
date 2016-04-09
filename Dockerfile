@@ -2,7 +2,7 @@ FROM sameersbn/ubuntu:14.04.20160321
 MAINTAINER Gunnar Falk
 
 ENV OPENFIRE_VERSION=4.0.2 \
-    OPENFIRE_USER=openfire \
+    OPENFIRE_USER=root \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire
 
