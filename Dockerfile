@@ -1,4 +1,4 @@
-FROM sameersbn/ubuntu:14.04.20160321
+FROM debian:latest
 MAINTAINER Gunnar Falk
 
 ENV OPENFIRE_VERSION=4.0.2 \
