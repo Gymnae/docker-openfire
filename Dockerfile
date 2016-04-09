@@ -2,7 +2,7 @@ FROM sameersbn/ubuntu:14.04.20160321
 MAINTAINER Gunnar Falk
 
 ENV OPENFIRE_VERSION=4.0.2 \
-    OPENFIRE_USER=root \
+    OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire
 
@@ -17,6 +17,6 @@ RUN apt-get update \
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod 755 /sbin/entrypoint.sh
 
-EXPOSE 80/tcp 3478/tcp 3479/tcp 5222/tcp 5223/tcp 5229/tcp 7070/tcp 7443/tcp 7777/tcp 9090/tcp 9091/tcp 10000-20000/udp 10000-20000/tcp 443/tcp
+EXPOSE 80/tcp 3478/tcp 3479/tcp 5222/tcp 5223/tcp 5229/tcp 7070/tcp 7443/tcp 7777/tcp 9090/tcp 9091/tcp 5000-6000/udp 5000-6000/tcp 10000-20000/udp 10000-20000/tcp 443/tcp
 VOLUME ["${OPENFIRE_DATA_DIR}"]
 ENTRYPOINT ["/sbin/entrypoint.sh"]
