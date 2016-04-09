@@ -13,7 +13,7 @@ initialize_data_dir() {
 
   mkdir -p ${OPENFIRE_DATA_DIR}
   chmod -R 0750 ${OPENFIRE_DATA_DIR}
-  chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} ${OPENFIRE_DATA_DIR}
+  chown -R root:root ${OPENFIRE_DATA_DIR}
 
   # migrates data volume directory structure
   if [[ -d ${OPENFIRE_DATA_DIR}/openfire ]]; then
@@ -48,7 +48,7 @@ initialize_log_dir() {
   echo "Initializing ${OPENFIRE_LOG_DIR}..."
   mkdir -p ${OPENFIRE_LOG_DIR}
   chmod -R 0755 ${OPENFIRE_LOG_DIR}
-  chown -R ${OPENFIRE_USER}:${OPENFIRE_USER} ${OPENFIRE_LOG_DIR}
+  chown -R root:root ${OPENFIRE_LOG_DIR}
 }
 
 # allow arguments to be passed to openfire launch
