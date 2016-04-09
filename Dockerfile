@@ -1,13 +1,13 @@
 FROM ubuntu:xenial
 MAINTAINER Gunnar Falk
 
-ENV OPENFIRE_VERSION=4.0.2 \
+ENV OPENFIRE_VERSION=4.0.1 \
     OPENFIRE_USER=openfire \
     OPENFIRE_DATA_DIR=/var/lib/openfire \
     OPENFIRE_LOG_DIR=/var/log/openfire
 
 RUN apt-get update \
- && DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jre wget \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-7-jre wget \
  && wget "http://download.igniterealtime.org/openfire/openfire_${OPENFIRE_VERSION}_all.deb" -O /tmp/openfire_${OPENFIRE_VERSION}_all.deb \
  && dpkg -i /tmp/openfire_${OPENFIRE_VERSION}_all.deb \
  && mv /var/lib/openfire/plugins/admin /usr/share/openfire/plugin-admin \
